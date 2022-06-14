@@ -48,6 +48,41 @@ basic.forever(function () {
         led.plotBrightness(2, 4, 0)
         radio.sendValue("p2", 0)
     }
+    if (input.isGesture(Gesture.FreeFall)) {
+        led.plotBrightness(0, 2, 255)
+        radio.sendValue("ff", 255)
+    } else {
+        led.plotBrightness(0, 2, 0)
+        radio.sendValue("ff", 0)
+    }
+    if (input.isGesture(Gesture.LogoUp)) {
+        led.plotBrightness(1, 2, 255)
+        radio.sendValue("lu", 255)
+    } else {
+        led.plotBrightness(1, 2, 0)
+        radio.sendValue("lu", 0)
+    }
+    if (input.isGesture(Gesture.LogoDown)) {
+        led.plotBrightness(2, 2, 255)
+        radio.sendValue("ld", 255)
+    } else {
+        led.plotBrightness(2, 2, 0)
+        radio.sendValue("ld", 0)
+    }
+    if (input.isGesture(Gesture.TiltLeft)) {
+        led.plotBrightness(3, 2, 255)
+        radio.sendValue("tl", 255)
+    } else {
+        led.plotBrightness(3, 2, 0)
+        radio.sendValue("tl", 0)
+    }
+    if (input.isGesture(Gesture.TiltRight)) {
+        led.plotBrightness(4, 2, 255)
+        radio.sendValue("tr", 255)
+    } else {
+        led.plotBrightness(4, 2, 0)
+        radio.sendValue("tl", 0)
+    }
     led.plotBrightness(4, 0, input.soundLevel())
     led.plotBrightness(3, 4, input.lightLevel())
     led.plotBrightness(4, 4, input.temperature() * 7.96875)
