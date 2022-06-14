@@ -49,31 +49,27 @@ basic.forever(function () {
         radio.sendValue("p2", 0)
     }
     // These last few ifs have no radio sending, this is because we don't have the space on the line to send the data over to another Micro:Bit
-    if (input.isGesture(Gesture.ThreeG)) {
+    if (input.isGesture(Gesture.LogoUp)) {
         led.plotBrightness(0, 2, 255)
     } else {
         led.plotBrightness(0, 2, 0)
     }
-    if (input.isGesture(Gesture.LogoUp)) {
+    if (input.isGesture(Gesture.LogoDown)) {
         led.plotBrightness(1, 2, 255)
     } else {
         led.plotBrightness(1, 2, 0)
     }
-    if (input.isGesture(Gesture.LogoDown)) {
+    if (input.isGesture(Gesture.TiltLeft)) {
         led.plotBrightness(2, 2, 255)
     } else {
         led.plotBrightness(2, 2, 0)
     }
-    if (input.isGesture(Gesture.TiltLeft)) {
+    if (input.isGesture(Gesture.TiltRight)) {
         led.plotBrightness(3, 2, 255)
     } else {
         led.plotBrightness(3, 2, 0)
     }
-    if (input.isGesture(Gesture.TiltRight)) {
-        led.plotBrightness(4, 2, 255)
-    } else {
-        led.plotBrightness(4, 2, 0)
-    }
+    // No pixel setting on 4, 2 because the events I had planned didn't work, unfortunately.
     led.plotBrightness(4, 0, input.soundLevel())
     led.plotBrightness(3, 4, input.lightLevel())
     led.plotBrightness(4, 4, input.temperature() * 7.96875)
